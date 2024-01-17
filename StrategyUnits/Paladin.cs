@@ -8,15 +8,7 @@ namespace StrategyUnits
 {
     internal class Palladin : MagicUnit
     {
-        public Palladin(int health, int manna, string? name, int magic_damage, int damage) : base(20, 40, "Palladin", 10, 2)
-        {
-            Health = health;
-            Manna = manna;
-            Name = name;
-            MaxHealth = health;
-            MagicDamage = magic_damage;
-            Damage = damage;
-        }
+        public Palladin() : base(20, 40, "Palladin", 10, 2) { }
 
         public void MagicHit(Unit unit)
         {

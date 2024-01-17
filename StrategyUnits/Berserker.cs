@@ -1,23 +1,21 @@
 ﻿namespace StrategyUnits
 {
-    internal class Footman : Unit
+    internal class Berserker : MilitaryUnit
     {
-        private int _damage;
+        private bool is_low { get; set; } = true;
 
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
+        public Berserker() : base(100, "Berserker", 20) { }
 
-        public Footman() : base(60, "Footman")
+        public void HeavyBlow(Unit unit)
         {
-            _damage = 7;
-        }
-
-        public void InflictDamage(Unit unit)
-        {
-            unit.Health -= _damage;
+            if (is_low)
+            {
+                unit.Health += this.Damage * 2;
+            }
+            else
+            {
+                Console.WriteLine(this.Name + " low");
+            }
         }
     }
-}
+} 

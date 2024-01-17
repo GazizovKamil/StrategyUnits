@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace StrategyUnits
 {
-    internal class Healer : Unit
+    internal class Healer : MagicUnit
     {
-        private int _manna;
-
-        public int Manna
-        {
-            get { return _manna; }
-            set { _manna = value; }
-        }
-
-        public Healer() : base(20, "Doctor")
-        {
-            _manna = 40;
-        }
+        public Healer() : base(20, 40, "Healer", 0, 0) { }
 
         public void Healing(Unit unit)
         {
-            unit.Health += 10;
-            _manna -= 10;
+            if (Manna > 10)
+            {
+                unit.Health += 10;
+                Manna -= 10;
+            }
+            else if (Manna > 0)
+            {
+                unit.Health += Manna;
+                Manna = 0;
+            }
+            else
+            {
+                Console.WriteLine(this.Name + " low manna");
+            }
         }
     }
 }

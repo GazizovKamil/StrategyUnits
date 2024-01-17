@@ -8,22 +8,21 @@ namespace StrategyUnits
 {
     internal class Archer : MilitaryUnit
     {
-        private int _damage;
+        private int _arrows_count;
 
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
+        public Archer() : base(20, "Archer", 5) { }
 
-        public Archer() : base(50, "Archer")
+        public void ShootArrow(Unit unit)
         {
-            _damage = 4;
-        }
-
-        public void InflictDamage(Unit unit)
-        {
-            unit.Health -= _damage;
+            if (_arrows_count > 0)
+            {
+                unit.Health += this.Damage;
+                _arrows_count--;
+            }
+            else
+            {
+                Console.WriteLine(this.Name + " arrows 0");
+            }
         }
     }
 }

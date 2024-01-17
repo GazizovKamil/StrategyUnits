@@ -2,15 +2,25 @@
 {
     internal class MilitaryUnit : Unit
     {
-        private int _currentHealth;
-        private string? _name;
-        public int MaxHealth { get; private set; }
+        private int _damage;
 
-        public MilitaryUnit(int health, string? name) : base(0, "")
+        public int Damage
         {
-            _currentHealth = health;
-            _name = name;
+            get { return _damage; }
+            set { _damage = value; }
+        }
+
+        public MilitaryUnit(int health, string? name, int damage) : base(0, "")
+        {
+            Health = health;
+            Name = name;
             MaxHealth = health;
+            Damage = damage;
+        }
+
+        public void InflictDamage(Unit unit)
+        {
+            unit.Health -= _damage;
         }
     }
 }

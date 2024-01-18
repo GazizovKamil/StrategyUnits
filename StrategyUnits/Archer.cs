@@ -10,7 +10,9 @@ namespace StrategyUnits
     {
         private int _arrows_count;
 
-        public Archer() : base(20, "Archer", 5) { }
+        public Archer(int arrows_count) : base(20, "Archer", 5) {
+            _arrows_count = arrows_count;
+        }
 
         public void ShootArrow(Unit unit)
         {

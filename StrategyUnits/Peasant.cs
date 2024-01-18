@@ -10,7 +10,7 @@
         {
             if (is_work) {
                 Console.WriteLine("Go work");
-                is_work = true;
+                is_work = false;
             }
             else
             {

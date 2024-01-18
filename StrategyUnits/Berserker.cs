@@ -11,6 +11,7 @@
             if (is_low)
             {
                 unit.Health += this.Damage * 2;
+                is_low = false;
             }
             else
             {

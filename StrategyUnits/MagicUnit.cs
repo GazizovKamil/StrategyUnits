@@ -26,10 +26,5 @@
             MagicDamage = magic_damage;
             Damage = damage;
         }
-
-        public void InflictDamage(Unit unit)
-        {
-            unit.Health -= Damage;
-        }
     }
 }

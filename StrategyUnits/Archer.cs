@@ -18,7 +18,7 @@ namespace StrategyUnits
         {
             if (_arrows_count > 0)
             {
-                unit.Health += this.Damage;
+                unit.Health -= this.Damage;
                 _arrows_count--;
             }
             else
